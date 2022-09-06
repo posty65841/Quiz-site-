@@ -40,6 +40,7 @@ function renderQuestion() {
 }
 
 function checkCorrect(el) {
+    let correctAnswer = questions[currentQuestionIndex].correctAnswer
    
 }
 
