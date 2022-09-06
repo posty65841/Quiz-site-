@@ -1,15 +1,15 @@
 let questions = [
-{ question: "what does . mean ", answers:["A. nothing", "B.selects a class", "C.targets a id ","D. chickens "],
+{ question: "what does . do ", answers:["A. nothing", "B.selects a class", "C.targets a id ","D. chickens "],
 correctAnswer: "B.selects a class" },
 
-{ question: "what does # mean ", answers:["A. nothing", "B.selects a class", "C.selects a id ","D. chickens "],
-correctAnswer: "C.selects a id" },
+{ question: "what does # do ", answers:["A. nothing", "B. selects a class", "C. selects a id ","D. chickens "],
+correctAnswer: "C. selects a id" },
 
-{ question: "java script is considered to be the what of a website?  ", answers:["A. brain", "B.skeleton", "C.skin ","D. cloths  "],
+{ question: "java script is considered to be the what of a website?  ", answers:["A. brain", "B. skeleton", "C. skin ","D. cloths  "],
 correctAnswer: "A. brain " },
 
-{ question: "what does CSS stand for  ", answers:["A. Cascading Style Sheets", "B.code style sheets", "C. coffe stew salad  ","D. chickens suit styles "],
-correctAnswer: "A.Cascading Style Sheets" }
+{ question: "what does CSS stand for  ", answers:["A. Cascading Style Sheets", "B. code style sheets", "C. coffe stew salad  ","D. chickens suit styles "],
+correctAnswer: "A. Cascading Style Sheets" }
 
 ];
 
@@ -22,36 +22,76 @@ let B = document.querySelector("#B");
 let C = document.querySelector("#C");
 let D = document.querySelector("#D");
 let currentQuestionIndex = 0
+let timeEl = document.querySelector("#timer")
 
 answerButtons.addEventListener("click", function(){
     currentQuestionIndex++;
     renderQuestion();
 })
 
-function renderQuestion() {
+function renderQuestion() {   //rotates the questions as answered
     let question = questions[currentQuestionIndex];
 
     questionText.innerText = question.question;
     A.innerText = question.answers[0];
     B.innerText = question.answers[1];
-    // c, d...
     C.innerText = question.answers[2];
     D.innerText = question.answers[3];
 }
 
 function checkCorrect(el) {
-    let correctAnswer = questions[currentQuestionIndex].correctAnswer
-   
+    let correctAnswer = questions[currentQuestionIndex].correctAnswer;
+    console.log(correctAnswer);
+    console.log(el.textContent)
+   if(el.textContent === correctAnswer){
+   }
+   else{
+    secondsLeft -=10;
+   }
 }
 
+let secondsLeft = 25;
+function setTime() {
+    // Sets interval in variable
+    let timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft 
+        
+        if(secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            
+       endQuiz();
+        
+    }
+    
+}, 1000);
+}
+setTime();
 
 
- // el
-    // var question = questions[currentQuestionIndex];
-    // compare el.innerText against question.correctAnswer
-    // if true...
-        // add to the score/timer
-    // else...
-        // subtract from timer
-    // update currentQuestionIndex
-    // renderQuestion
+function endQuiz(){
+    currentQuestionIndex.style.display = "none";
+    
+}
+// el
+// var question = questions[currentQuestionIndex];
+// compare el.innerText against question.correctAnswer
+// if true...
+// add to the score/timer
+// else...
+// subtract from timer
+// update currentQuestionIndex
+// renderQuestion
+
+
+// function checkCorrect(el) {
+    // let correctAnswer = questions[currentQuestionIndex].correctAnswer
+    // if(el.textContent === correctAnswer){
+    //    console.log(correctAnswer);
+    //    console.log(el.textContent)
+// }
+// else{
+    secondsLeft -=10;
+// }
+// }
