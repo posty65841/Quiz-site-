@@ -2,14 +2,14 @@ let questions = [
 { question: "what does . do ", answers:["A. nothing", "B.selects a class", "C.targets a id ","D. chickens "],
 correctAnswer: "B.selects a class" },
 
-{ question: "what does # do ", answers:["A. nothing", "B. selects a class", "C. selects a id ","D. chickens "],
-correctAnswer: "C. selects a id" },
+{ question: "what does # do ", answers:["A. nothing", "B. selects a class", "C.selects a id ","D. chickens "],
+correctAnswer: "C.selects a id" },
 
-{ question: "java script is considered to be the what of a website?  ", answers:["A. brain", "B. skeleton", "C. skin ","D. cloths  "],
-correctAnswer: "A. brain " },
+{ question: "java script is considered to be the what of a website?  ", answers:["A.brain", "B. skeleton", "C. skin ","D. cloths  "],
+correctAnswer: "A.brain " },
 
-{ question: "what does CSS stand for  ", answers:["A. Cascading Style Sheets", "B. code style sheets", "C. coffe stew salad  ","D. chickens suit styles "],
-correctAnswer: "A. Cascading Style Sheets" }
+{ question: "what does CSS stand for  ", answers:["A.Cascading Style Sheets", "B. code style sheets", "C. coffe stew salad  ","D. chickens suit styles "],
+correctAnswer: "A.Cascading Style Sheets" }
 
 ];
 
@@ -53,7 +53,7 @@ function checkCorrect(el) {
    }
 }
 
-let secondsLeft = 100;
+let secondsLeft = 50;
 
 function startQuiz() {
     appear.style.display="block";
@@ -77,10 +77,9 @@ function startQuiz() {
 setTime();
 
 
-function endQuiz(){
-    
-    
-}
+
+
+  
 // el
 // var question = questions[currentQuestionIndex];
 // compare el.innerText against question.correctAnswer
@@ -99,6 +98,6 @@ function endQuiz(){
     //    console.log(el.textContent)
 // }
 // else{
-    secondsLeft -=10;
+   
 // }
 // }
