@@ -2,11 +2,11 @@ let questions = [
 { question: "what does . do ", answers:["A. nothing", "B.selects a class", "C.targets a id ","D. chickens "],
 correctAnswer: "B.selects a class" },
 
-{ question: "what does # do ", answers:["A. nothing", "B. selects a class", "C.selects a id ","D. chickens "],
+{ question: "what does # do ", answers:["A. nothing", "B. selects a class", "C.selects a id","D. chickens "],
 correctAnswer: "C.selects a id" },
 
 { question: "java script is considered to be the what of a website?  ", answers:["A.brain", "B. skeleton", "C. skin ","D. cloths  "],
-correctAnswer: "A.brain " },
+correctAnswer: "A.brain" },
 
 { question: "what does CSS stand for  ", answers:["A.Cascading Style Sheets", "B. code style sheets", "C. coffe stew salad  ","D. chickens suit styles "],
 correctAnswer: "A.Cascading Style Sheets" }
@@ -23,7 +23,7 @@ let C = document.querySelector("#C");
 let D = document.querySelector("#D");
 let currentQuestionIndex = 0
 let timeEl = document.querySelector("#timer")
-
+let highEl =document.querySelector("#highScore")
 let start = document.getElementById("start")
 start.addEventListener("click", startQuiz)
 
@@ -46,9 +46,7 @@ function checkCorrect(el) {
     let correctAnswer = questions[currentQuestionIndex].correctAnswer;
     console.log(correctAnswer);
     console.log(el.textContent)
-   if(el.textContent === correctAnswer){
-   }
-   else{
+   if(el.textContent !== correctAnswer){
     secondsLeft -=5;
    }
 }
@@ -74,7 +72,6 @@ function startQuiz() {
     
 }, 1000);
 }
-setTime();
 
 
 
