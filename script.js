@@ -24,6 +24,9 @@ let D = document.querySelector("#D");
 let currentQuestionIndex = 0
 let timeEl = document.querySelector("#timer")
 
+let start = document.getElementById("start")
+start.addEventListener("click", startQuiz)
+
 answerButtons.addEventListener("click", function(){
     currentQuestionIndex++;
     renderQuestion();
@@ -46,22 +49,26 @@ function checkCorrect(el) {
    if(el.textContent === correctAnswer){
    }
    else{
-    secondsLeft -=10;
+    secondsLeft -=5;
    }
 }
 
-let secondsLeft = 25;
-function setTime() {
-    // Sets interval in variable
+let secondsLeft = 100;
+
+function startQuiz() {
+    appear.style.display="block";
+    disappear.style.display="none";
+    
     let timerInterval = setInterval(function() {
-        secondsLeft--;
+        secondsLeft --;
         timeEl.textContent = secondsLeft 
         
         if(secondsLeft === 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             
-       endQuiz();
+            
+      
         
     }
     
@@ -71,7 +78,7 @@ setTime();
 
 
 function endQuiz(){
-    currentQuestionIndex.style.display = "none";
+    
     
 }
 // el
