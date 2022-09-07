@@ -57,7 +57,7 @@ let secondsLeft = 100;
 
 function startQuiz() {
     appear.style.display="block";
-    disappear.style.display="none";
+   
     
     let timerInterval = setInterval(function() {
         secondsLeft --;
