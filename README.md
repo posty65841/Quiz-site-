@@ -48,9 +48,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
- this project is  pass word generator that allows a user to select 
- Uppercase, Lowercase, numeric characters & special characters 
- it also allows a user to select the length on the password 
+ This app is a quiz that contains questions about java script during this quiz you will encounter such features 
+ 1. a dynamic timer that checks for correct/incorrect answers 
+ 2. a score tracker 
+ 3. a high score list that maintains previous attempts 
+ 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
