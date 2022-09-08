@@ -55,3 +55,11 @@ text-align: center;
     margin-right: auto;
     
 }
+a{
+    background-color: aqua;
+    color: palevioletred;
+   
+    justify-content: center;
+ align-items: center;
+text-align: center;
+}

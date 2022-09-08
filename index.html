@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1>Javascript quiz</h1>
-        <div>High score: <span id="highScore"></span></div>
+        
     <div>timeleft: <span id="timer"></span></div>
     
     </header>
@@ -19,6 +19,7 @@
     <h2> Test what you know see what you can learn </h2>
 
     <button type="button" id="start">Start </button>
+    
     <div id="appear" style="display:none;">
     <h2 id="question"></h2>
     <div class="answerButtons"  >
@@ -28,8 +29,9 @@
         <button id="D" onclick="checkCorrect(this)"></button>
      </div>
      <div id="navButton">  
-        <a href="./index.html" class="btn">Back to start</a>
+        <a href="./index.html" class="start">Back to start</a>
     </div>
+    <button id="score">Highscore</button>
    <script src="./script.js"></script> 
    <script type="text/javascript">
         renderQuestion();
