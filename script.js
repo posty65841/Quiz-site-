@@ -95,4 +95,4 @@ function startQuiz() { //starts timer when start is clicked
 
 
 
-  
+
