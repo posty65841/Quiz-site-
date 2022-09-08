@@ -25,7 +25,8 @@ let currentQuestionIndex = 0
 let timeEl = document.querySelector("#timer")
 let highEl =document.querySelector("#highScore")
 let start = document.getElementById("start")
-
+let correct = 0
+let incorrect = 0
 
 
 answerButtons.addEventListener("click", function(){
@@ -46,14 +47,20 @@ function renderQuestion() {   //rotates the questions as answered
 function checkCorrect(el) { //checks if answer is correct
     let correctAnswer = questions[currentQuestionIndex].correctAnswer;
     console.log(correctAnswer);
-    console.log(el.textContent)
+    console.log(el.textContent);
+    if(el.textContent === correctAnswer){
+        window.alert("correct, + 1 ")
+    }else{
+        el.textContent !== correctAnswer
+        window.alert("incorrect, + 1")
+    }
    if(el.textContent !== correctAnswer){
     secondsLeft -=5;
    }
   
 }
 start.addEventListener("click", startQuiz)
-let secondsLeft = 25;
+let secondsLeft = 50;
 
 function startQuiz() { //starts timer when start is clicked 
     appear.style.display="block";
@@ -67,7 +74,7 @@ function startQuiz() { //starts timer when start is clicked
         clearInterval(timerInterval)
         
         if(secondsLeft === 0) {
-            // Stops execution of action at set interval
+            // timer stops when seconds left hits 0 
             clearInterval(timerInterval)
 
         
