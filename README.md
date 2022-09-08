@@ -54,6 +54,5 @@
  3. a high score list that maintains previous attempts 
  
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
