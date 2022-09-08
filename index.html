@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js quiz </title>
     <link rel="stylesheet" href="./style.css">
-</head> 
+</head>
 
 <body>
     <header>
         <h1>Javascript quiz</h1>
-        
-    <div>timeleft: <span id="timer"></span></div>
-    
+
+        <div>timeleft: <span id="timer"></span></div>
+
     </header>
-    
+
     <h2> Test what you know see what you can learn </h2>
 
     <button type="button" id="start">Start </button>
-    
+
     <div id="appear" style="display:none;">
-    <h2 id="answer"></h2>
-    <div class="answerButtons"  >
-        <button id="A" onclick="checkCorrect(this)"></button>
-        <button id="B" onclick="checkCorrect(this)"></button>
-        <button id="C" onclick="checkCorrect(this)"></button>
-        <button id="D" onclick="checkCorrect(this)"></button>
-     </div>
-     <div id="navButton">  
-        <a href="./index.html" class="start">Back to start</a>
+        <h2 id="answer"></h2>
+        <div class="answerButtons">
+            <button id="A" onclick="checkCorrect(this)"></button>
+            <button id="B" onclick="checkCorrect(this)"></button>
+            <button id="C" onclick="checkCorrect(this)"></button>
+            <button id="D" onclick="checkCorrect(this)"></button>
+        </div>
+        <div id="navButton">
+            <a href="./index.html" class="start">Back to start</a>
+        </div>
+        <!-- add an input for initials/ scoring   -->
     </div>
-    
-   <script src="./script.js"></script> 
-   <script type="text/javascript">
-        renderQuestion();
-   </script>
+        <script src="./script.js"></script>
+        <script type="text/javascript">
+            renderQuestion();
+        </script>
 </body>
+
 </html>

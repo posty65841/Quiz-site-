@@ -27,21 +27,30 @@ let highEl =document.querySelector("#highScore")
 let start = document.getElementById("start")
 let correct = 0
 let incorrect = 0
-
+let timerInterval;
 
 answerButtons.addEventListener("click", function(){
     currentQuestionIndex++;
+    
     renderQuestion();
+    console.log (currentQuestionIndex)
+    if (currentQuestionIndex === 4 ) {//when question  3 is answered timer stops 
+    clearInterval(timerInterval)
+    appear.style.display= "none";}
 })
 
 function renderQuestion() {   //rotates the questions as answered
     let question = questions[currentQuestionIndex];
-
-    questionText.innerText = question.question;
-    A.innerText = question.answers[0];
-    B.innerText = question.answers[1];
-    C.innerText = question.answers[2];
-    D.innerText = question.answers[3];
+    if (currentQuestionIndex === 4 )
+    appear.style.display= "none";
+    else{
+        questionText.innerText = question.question;
+        A.innerText = question.answers[0];
+        B.innerText = question.answers[1];
+        C.innerText = question.answers[2];
+        D.innerText = question.answers[3];
+    }
+    
 }
 
 function checkCorrect(el) { //checks if answer is correct
@@ -49,14 +58,13 @@ function checkCorrect(el) { //checks if answer is correct
     console.log(correctAnswer);
     console.log(el.textContent);
     if(el.textContent === correctAnswer){
-        window.alert("correct, + 1 ")
+        correct +=1;
+        console.log(correct);
     }else{
-        el.textContent !== correctAnswer
-        window.alert("incorrect, + 1 ")
+        secondsLeft -=5;
+        incorrect +=1; 
     }
-   if(el.textContent !== correctAnswer){
-    secondsLeft -=5;
-   }
+  
   
 }
 start.addEventListener("click", startQuiz)
@@ -66,23 +74,23 @@ function startQuiz() { //starts timer when start is clicked
     appear.style.display="block";
    
     
-    let timerInterval = setInterval(function() {
+     timerInterval = setInterval(function() {
         secondsLeft --;
         timeEl.textContent = secondsLeft 
 
-        if (currentQuestionIndex === 4 ) //when question  3 is answered timer stops 
-        clearInterval(timerInterval)
+        
+
         
         if(secondsLeft === 0) {
             // timer stops when seconds left hits 0 
             clearInterval(timerInterval)
+            appear.style.display= "none";
 
         
     }
     
 }, 1000);
 }
-
 
 
 
