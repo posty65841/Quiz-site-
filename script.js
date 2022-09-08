@@ -16,7 +16,7 @@ correctAnswer: "A.Cascading Style Sheets" }
 
 let answerButtons = document.querySelector(".answerButtons");
 let answers = document.querySelector("h2");
-let questionText = document.querySelector("#question");
+let questionText = document.querySelector("#answer");
 let A = document.querySelector("#A");
 let B = document.querySelector("#B");
 let C = document.querySelector("#C");
@@ -52,7 +52,7 @@ function checkCorrect(el) { //checks if answer is correct
         window.alert("correct, + 1 ")
     }else{
         el.textContent !== correctAnswer
-        window.alert("incorrect, + 1")
+        window.alert("incorrect, + 1 ")
     }
    if(el.textContent !== correctAnswer){
     secondsLeft -=5;
@@ -88,24 +88,3 @@ function startQuiz() { //starts timer when start is clicked
 
 
   
-// el
-// var question = questions[currentQuestionIndex];
-// compare el.innerText against question.correctAnswer
-// if true...
-// add to the score/timer
-// else...
-// subtract from timer
-// update currentQuestionIndex
-// renderQuestion
-
-
-// function checkCorrect(el) {
-    // let correctAnswer = questions[currentQuestionIndex].correctAnswer
-    // if(el.textContent === correctAnswer){
-    //    console.log(correctAnswer);
-    //    console.log(el.textContent)
-// }
-// else{
-   
-// }
-// }
